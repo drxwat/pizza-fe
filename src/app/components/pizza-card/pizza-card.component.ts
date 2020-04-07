@@ -29,4 +29,8 @@ export class PizzaCardComponent implements OnInit {
     }
   }
 
+  onAmountIncrement() {
+    this.addToCart.emit(this.pizza);
+  }
+
 }

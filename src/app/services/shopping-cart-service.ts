@@ -5,14 +5,18 @@ export class ShoppingCartService {
 
     private _cart: Map<number, number> = new Map();
 
+    get cart() {
+        return this._cart;
+    }
+
     constructor() {}
 
     public addToCart(id: number, amount = 1) {
         if (!this._cart.has(id)) {
-            this._cart.set(id, amount);
+            this.setNewValue(id, amount);
         } else {
             const currentValue = this._cart.get(id) as number;
-            this._cart.set(id, currentValue + amount)
+            this.setNewValue(id, currentValue + amount)
         }
     }
 
@@ -22,5 +26,13 @@ export class ShoppingCartService {
 
     public clearCart() {
         [...this._cart.keys()].forEach((k) => this._cart.delete(k));
+    }
+
+    private setNewValue(id: number, value: number) {
+        if (value <= 0) {
+            this._cart.delete(id);
+        } else {
+            this._cart.set(id, value);
+        }
     }
 }

@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { CounterComponent } from './components/counter/counter.component'; 
 import {MatRippleModule} from '@angular/material/core';
+import { ShoppingCartService } from './services/shopping-cart-service';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatRippleModule} from '@angular/material/core';
   ],
   providers: [
     PizzaService,
+    ShoppingCartService,
   ],
   bootstrap: [AppComponent]
 })
