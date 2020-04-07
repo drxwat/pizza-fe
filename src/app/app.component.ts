@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PizzaService } from './services/pizza-service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'pizza-fe';
+
+  constructor(private _pizzaService: PizzaService) {
+    this._pizzaService.getPIzzas().subscribe((data) => {
+      console.log(data);
+    })
+  }
 }
