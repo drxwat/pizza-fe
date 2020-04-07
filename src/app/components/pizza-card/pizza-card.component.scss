@@ -1,0 +1,13 @@
+@import 'common';
+
+:host {
+    box-sizing: border-box;
+    padding: $guttler;
+
+    @each $size in $screen_sizes {
+        $i: index($screen_sizes, $size);
+        @media (min-width: $size) {
+            flex-basis: 100% / $i;
+         }
+    }
+}

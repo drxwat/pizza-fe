@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { PizzaService } from './services/pizza-service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
 
+  public pizzas$ = this._pizzaService.getPIzzas();
+
   constructor(private _pizzaService: PizzaService) {
-    this._pizzaService.getPIzzas().subscribe((data) => {
-      console.log(data);
-    })
   }
 }
