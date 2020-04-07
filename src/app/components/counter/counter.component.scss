@@ -1,0 +1,26 @@
+@import 'common';
+
+:host {
+    display: flex;
+    box-sizing: border-box;
+    font-size: 20px;
+
+    div {
+        padding: $guttler / 4;
+
+        &.action {
+            width: $guttler * 1.5;
+            height: $guttler * 1.5;
+            border: 1px solid;
+            border-radius: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        &.value {
+            padding: $guttler / 4 $guttler / 1.5;
+        }
+    }
+
+
+}

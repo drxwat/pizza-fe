@@ -8,6 +8,10 @@
         <p>
             {{ pizza.description }}
         </p>
+        <div class="calculation-wrapper">
+            <span class="calculation-wrapper__price">{{ pizza.price }} $</span>
+            <app-counter [value]="1" (change)="onAmountChange($event)"></app-counter>
+        </div>
     </mat-card-content>
     <mat-card-actions>
         <button mat-button><mat-icon>add_shopping_cart</mat-icon> ADD TO CART</button>

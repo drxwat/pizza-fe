@@ -9,12 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { PizzaCardComponent } from './components/pizza-card/pizza-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon'; 
+import {MatIconModule} from '@angular/material/icon';
+import { CounterComponent } from './components/counter/counter.component'; 
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PizzaCardComponent
+    PizzaCardComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatRippleModule,
   ],
   providers: [
     PizzaService,
