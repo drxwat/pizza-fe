@@ -14,6 +14,15 @@ import { Pizza } from 'src/app/models/pizza';
 })
 export class ShoppingCartComponent implements OnInit {
 
+  demoEntry: ShoppingCartEntry = {
+    id: 11,
+    title: 'Pizzaaaa',
+    subtitle: 'Subtitle',
+    amount: 3,
+    pictureUrl: 'assets/pizza-margherita.jpeg',
+    price: 10
+  };
+
   public pizzas$ = this._pizzaService.getPIzzas();
   public cartEntries$: Observable<ShoppingCartEntry[]>;
 

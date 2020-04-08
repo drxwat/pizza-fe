@@ -1,16 +1,21 @@
-<div class="picture-wrapper">
-    <img class="picture" src="{{ entry.pictureUrl }}">
-</div>
-<div>
-    <span>{{ entry.title }}</span>
-    <span>{{ entry.subtitle }}</span>
-</div>
-<div>
-    <app-counter [value]="entry.amount"></app-counter>
-</div>
-<div>
-    <span>{{ entry.price }} $</span>
-</div>
-<div>
-    <button mat-button>X</button>
-</div>
+<mat-card>
+    <div class="card-inner-wrapper">
+        <div class="card-inner-picture__wrapper card-inner__column">
+            <img class="card-inner-picture__image" src="{{ entry.pictureUrl }}">
+        </div>
+        <div class="card-inner-title__wrapper card-inner__column">
+            <span class="card-inner-title__main">{{ entry.title }}</span>
+            <small>{{ entry.subtitle }}</small>
+        </div>
+        <div class="card-inner-price__wrapper card-inner__column">
+            <span>{{ entry.price }} $</span>
+        </div>
+        <div class="card-inner-devider"></div>
+        <div class="card-inner__column">
+            <app-counter [value]="entry.amount"></app-counter>
+        </div>
+        <div class="card-inner-delete__wrapper card-inner__column">
+            <mat-icon mat-ripple color="warn">close</mat-icon>
+        </div>    
+    </div>
+</mat-card>

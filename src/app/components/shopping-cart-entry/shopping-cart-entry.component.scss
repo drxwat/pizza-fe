@@ -1,14 +1,57 @@
-@import 'common';
+@import "common";
 
 :host {
-    display: flex;
-    height: $guttler * 4;
+  padding: $guttler/2 $guttler;
 
-    .picture-wrapper {
-        height: inherit;
+  .card-inner {
+    &-wrapper {
+      display: flex;
+      height: $guttler * 4;
+      align-items: center;
     }
-    
-    .picture {
+
+    &-picture {
+      &__wrapper {
+        height: $guttler * 4;
+      }
+
+      &__image {
         max-height: 100%;
+      }
     }
+
+    &-title {
+      &__wrapper { 
+        display: flex;
+        flex-direction: column;
+        padding: 0px $guttler;
+        align-self: baseline;
+      }
+
+      &__main {
+        font-size: 26px;
+      }
+    }
+
+    &-devider {
+      flex-grow: 1;
+    }
+
+    &-price {
+      &__wrapper {
+        font-size: $font_big;
+        align-self: baseline;
+      }
+    }
+
+    &-delete {
+      &__wrapper {
+        cursor: pointer;
+      }
+    }
+
+    &__column {
+      padding: 0px $guttler/2;
+    }
+  }
 }

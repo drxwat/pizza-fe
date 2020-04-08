@@ -3,7 +3,7 @@
 :host {
     display: flex;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: $font_big;
 
     div {
         padding: $guttler / 4;
