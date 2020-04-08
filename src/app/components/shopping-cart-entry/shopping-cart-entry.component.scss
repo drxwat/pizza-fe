@@ -1,0 +1,14 @@
+@import 'common';
+
+:host {
+    display: flex;
+    height: $guttler * 4;
+
+    .picture-wrapper {
+        height: inherit;
+    }
+    
+    .picture {
+        max-height: 100%;
+    }
+}

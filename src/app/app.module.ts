@@ -18,6 +18,7 @@ import { ShoppingCartInfoComponent } from './components/shopping-cart-info/shopp
 import {MatBadgeModule} from '@angular/material/badge';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { PizzasListComponent } from './components/pizzas-list/pizzas-list.component';
+import { ShoppingCartEntryComponent } from './components/shopping-cart-entry/shopping-cart-entry.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PizzasListComponent } from './components/pizzas-list/pizzas-list.compon
     ShoppingCartInfoComponent,
     ShoppingCartComponent,
     PizzasListComponent,
+    ShoppingCartEntryComponent,
   ],
   imports: [
     BrowserModule,

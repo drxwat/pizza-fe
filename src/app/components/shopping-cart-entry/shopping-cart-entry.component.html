@@ -1,0 +1,16 @@
+<div class="picture-wrapper">
+    <img class="picture" src="{{ entry.pictureUrl }}">
+</div>
+<div>
+    <span>{{ entry.title }}</span>
+    <span>{{ entry.subtitle }}</span>
+</div>
+<div>
+    <app-counter [value]="entry.amount"></app-counter>
+</div>
+<div>
+    <span>{{ entry.price }} $</span>
+</div>
+<div>
+    <button mat-button>X</button>
+</div>
