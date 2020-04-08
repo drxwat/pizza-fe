@@ -9,7 +9,6 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 export class ShoppingCartInfoComponent implements OnInit {
 
   @Input() amount: number = 0;
-  @Input() price: number = 0;
 
   constructor() { }
 

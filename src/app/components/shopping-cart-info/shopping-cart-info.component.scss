@@ -2,8 +2,10 @@
 
 :host {
     display: flex;
+    align-items: center;
+    cursor: pointer;
 
-    .total-price {
+    .text {
         padding: 0px $guttler;
     }
 }

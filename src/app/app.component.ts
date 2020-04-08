@@ -23,6 +23,10 @@ export class AppComponent {
     return this._shoppingCartService.cart.get(id) || 0;
   }
 
+  getTotalPizzasAmount() {
+    return [...this._shoppingCartService.cart.values()].reduce((sum, item) => sum + item, 0);
+  }
+
   addOnePizzaToCart(pizza: Pizza) {
     this._shoppingCartService.addToCart(pizza.id);
   }

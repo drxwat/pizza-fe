@@ -2,7 +2,7 @@
     <mat-icon>local_pizza</mat-icon> 
     <span>Pizza Demo App</span>
     <span class="fill-remaining-space"></span>
-    <app-shopping-cart-info></app-shopping-cart-info>
+    <app-shopping-cart-info [amount]="getTotalPizzasAmount()"></app-shopping-cart-info>
 </mat-toolbar>
 <app-pizza-card
     *ngFor="let pizza of pizzas$ | async"
