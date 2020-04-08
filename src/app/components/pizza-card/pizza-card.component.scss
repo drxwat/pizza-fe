@@ -23,4 +23,12 @@
             flex-grow: 1;
         }
     }
+
+    .add-to-cart-btn {
+        width: 100%;
+
+        &__text {
+            padding: 0px $guttler;
+        }
+    }
 }

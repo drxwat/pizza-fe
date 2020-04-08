@@ -13,12 +13,16 @@ import {MatIconModule} from '@angular/material/icon';
 import { CounterComponent } from './components/counter/counter.component'; 
 import {MatRippleModule} from '@angular/material/core';
 import { ShoppingCartService } from './services/shopping-cart-service';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ShoppingCartInfoComponent } from './components/shopping-cart-info/shopping-cart-info.component'; 
+import {MatBadgeModule} from '@angular/material/badge'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaCardComponent,
-    CounterComponent
+    CounterComponent,
+    ShoppingCartInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,8 @@ import { ShoppingCartService } from './services/shopping-cart-service';
     MatButtonModule,
     MatIconModule,
     MatRippleModule,
+    MatToolbarModule,
+    MatBadgeModule,
   ],
   providers: [
     PizzaService,

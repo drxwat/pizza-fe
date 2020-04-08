@@ -1,8 +1,23 @@
-@import 'common';
+@import "common";
 
 :host {
     max-width: $max_screen_width;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    background-color: $gray1;
+    padding-top: $guttler * 4;
+
+    .fill-remaining-space {
+        flex: 1 1 auto;
+    }
+
+    .toolbar {
+        position: fixed;
+        top: 0px;
+        z-index: 1;
+        max-width: $max_screen_width;
+        height: $guttler * 4;
+        color: #fff;
+    }
 }

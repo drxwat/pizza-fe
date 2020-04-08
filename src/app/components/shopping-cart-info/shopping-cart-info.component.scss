@@ -1,0 +1,9 @@
+@import 'common';
+
+:host {
+    display: flex;
+
+    .total-price {
+        padding: 0px $guttler;
+    }
+}

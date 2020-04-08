@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class ShoppingCartService {
 
     private _cart: Map<number, number> = new Map();
+    private _change: Subject<Map<number, number>> = new Subject();
 
     get cart() {
         return this._cart;
+    }
+
+    get change$() {
+        return this._change.asObservable();
     }
 
     constructor() {}
@@ -26,6 +32,7 @@ export class ShoppingCartService {
 
     public clearCart() {
         [...this._cart.keys()].forEach((k) => this._cart.delete(k));
+        this.emitChange();
     }
 
     private setNewValue(id: number, value: number) {
@@ -34,5 +41,10 @@ export class ShoppingCartService {
         } else {
             this._cart.set(id, value);
         }
+        this.emitChange();
+    }
+
+    private emitChange() {
+        this._change.next(this._cart);
     }
 }
