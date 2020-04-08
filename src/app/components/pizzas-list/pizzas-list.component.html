@@ -1,0 +1,8 @@
+<app-pizza-card
+    *ngFor="let pizza of pizzas$ | async"
+    [pizza]="pizza" 
+    [amount]="getPizzaAmount(pizza.id)"
+    (addToCart)="addOnePizzaToCart($event)"
+    (removeFromCart)="removeOnePizzaFromCart($event)"
+    >
+</app-pizza-card>

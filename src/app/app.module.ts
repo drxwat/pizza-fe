@@ -15,7 +15,9 @@ import {MatRippleModule} from '@angular/material/core';
 import { ShoppingCartService } from './services/shopping-cart-service';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ShoppingCartInfoComponent } from './components/shopping-cart-info/shopping-cart-info.component'; 
-import {MatBadgeModule} from '@angular/material/badge'; 
+import {MatBadgeModule} from '@angular/material/badge';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { PizzasListComponent } from './components/pizzas-list/pizzas-list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     PizzaCardComponent,
     CounterComponent,
     ShoppingCartInfoComponent,
+    ShoppingCartComponent,
+    PizzasListComponent,
   ],
   imports: [
     BrowserModule,

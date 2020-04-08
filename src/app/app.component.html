@@ -1,14 +1,9 @@
 <mat-toolbar color="primary" class="toolbar">
-    <mat-icon>local_pizza</mat-icon> 
-    <span>Pizza Demo App</span>
+    <span [routerLink]="['/']" class="title">
+        <mat-icon>local_pizza</mat-icon> 
+        <span>Pizza Demo App</span>
+    </span>
     <span class="fill-remaining-space"></span>
-    <app-shopping-cart-info [amount]="getTotalPizzasAmount()"></app-shopping-cart-info>
+    <app-shopping-cart-info [routerLink]="['/cart']" [amount]="getTotalPizzasAmount()"></app-shopping-cart-info>
 </mat-toolbar>
-<app-pizza-card
-    *ngFor="let pizza of pizzas$ | async"
-    [pizza]="pizza" 
-    [amount]="getPizzaAmount(pizza.id)"
-    (addToCart)="addOnePizzaToCart($event)"
-    (removeFromCart)="removeOnePizzaFromCart($event)"
-    >
-</app-pizza-card>
+<router-outlet></router-outlet>

@@ -1,12 +1,11 @@
 @import "common";
 
 :host {
-    max-width: $max_screen_width;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
     background-color: $gray1;
     padding-top: $guttler * 4;
+    max-width: $max_screen_width;
+    margin: 0 auto;
 
     .fill-remaining-space {
         flex: 1 1 auto;
@@ -19,5 +18,11 @@
         max-width: $max_screen_width;
         height: $guttler * 4;
         color: #fff;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
     }
 }
