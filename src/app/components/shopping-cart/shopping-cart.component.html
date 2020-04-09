@@ -1,7 +1,22 @@
-<app-shopping-cart-entry
-    *ngFor="let cartEntry of cartEntries$ | async"
-    [entry]="cartEntry"
-    (addToCart)="addOneItemToCart($event)"
-    (removeFromCart)="removeOneItemFromCart($event)"
-    (delete)="delteFromCart($event)">
-</app-shopping-cart-entry>
+<ng-container *ngIf="isCartEmpty$ | async; then emptyBlock else cartBlock"></ng-container>
+
+<ng-template #cartBlock>
+    <h2 class="title">Your Order</h2>
+    <app-shopping-cart-entry *ngFor="let cartEntry of cartEntries$ | async" [entry]="cartEntry"
+        (addToCart)="addOneItemToCart($event)" (removeFromCart)="removeOneItemFromCart($event)"
+        (delete)="delteFromCart($event)">
+    </app-shopping-cart-entry>
+
+    <button (click)="applyOrder()" color="primary" class="apply-oerder-btn" mat-raised-button>Apply Order</button>
+</ng-template>
+
+<ng-template #emptyBlock>
+    <ng-container *ngIf="isOrderApplied; then successMsg else emptyMsg"></ng-container>
+
+    <ng-template #emptyMsg>
+        <div class="empty-msg">Shpooing cart is empty</div>
+    </ng-template>
+    <ng-template #successMsg>
+        <div class="success-msg">Thank you for your order. It will be delivered soon.</div>
+    </ng-template>
+</ng-template>

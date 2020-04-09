@@ -1,5 +1,25 @@
+@import 'common';
 
 :host {
     display: flex;
     flex-direction: column;
+
+    .title {
+        padding: 0 $guttler*2;
+    }
+
+    .empty-msg, .success-msg{
+        align-self: center;
+        padding: $guttler * 8;
+    }
+
+    .success-msg {
+        color: green;
+    }
+
+    .apply-oerder-btn {
+        align-self: flex-end;
+        margin: $guttler/2 $guttler;
+        padding: $guttler $guttler*3;
+    }
 }

@@ -14,17 +14,10 @@ import { Pizza } from 'src/app/models/pizza';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  demoEntry: ShoppingCartEntry = {
-    id: 11,
-    title: 'Pizzaaaa',
-    subtitle: 'Subtitle',
-    amount: 3,
-    pictureUrl: 'assets/pizza-margherita.jpeg',
-    price: 10
-  };
-
+  public isOrderApplied = false;
   public pizzas$ = this._pizzaService.getPIzzas();
   public cartEntries$: Observable<ShoppingCartEntry[]>;
+  public isCartEmpty$: Observable<boolean>;
 
   constructor(
     private _shoppingCartService: ShoppingCartService,
@@ -50,8 +43,11 @@ export class ShoppingCartComponent implements OnInit {
             amount
           }
         });
-      }),
-      tap((val) => console.log(val))
+      })
+    );
+
+    this.isCartEmpty$ = this.cartEntries$.pipe(
+      map((e) => e.length == 0)
     );
   }
 
@@ -65,6 +61,11 @@ export class ShoppingCartComponent implements OnInit {
 
   delteFromCart(id: number) {
     this._shoppingCartService.deleteFromCart(id);
+  }
+
+  applyOrder() {
+    this._shoppingCartService.clearCart();
+    this.isOrderApplied = true;
   }
 
 }

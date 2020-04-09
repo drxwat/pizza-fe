@@ -7,5 +7,9 @@
 
     .text {
         padding: 0px $guttler;
+
+        @media (max-width: $mobile_screen_width) { 
+            display: none;
+        }
     }
 }
