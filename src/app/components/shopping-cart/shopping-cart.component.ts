@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ShoppingCartService } from 'src/app/services/shopping-cart-service';
 import { PizzaService } from 'src/app/services/pizza-service';
 import { Observable, combineLatest, concat, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { ShoppingCartEntry } from '../shopping-cart-entry/shopping-cart-entry';
 import { Pizza } from 'src/app/models/pizza';
 
@@ -50,8 +50,21 @@ export class ShoppingCartComponent implements OnInit {
             amount
           }
         });
-      })
+      }),
+      tap((val) => console.log(val))
     );
+  }
+
+  addOneItemToCart(id: number) {
+    this._shoppingCartService.addToCart(id);
+  }
+
+  removeOneItemFromCart(id: number) {
+    this._shoppingCartService.removeFromCart(id);
+  }
+
+  delteFromCart(id: number) {
+    this._shoppingCartService.deleteFromCart(id);
   }
 
 }

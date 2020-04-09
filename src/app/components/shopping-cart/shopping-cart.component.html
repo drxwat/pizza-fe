@@ -1,11 +1,7 @@
-<app-shopping-cart-entry [entry]="cartEntry" *ngFor="let cartEntry of cartEntries$ | async"></app-shopping-cart-entry>
-
-
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
-<app-shopping-cart-entry [entry]="demoEntry"></app-shopping-cart-entry>
+<app-shopping-cart-entry
+    *ngFor="let cartEntry of cartEntries$ | async"
+    [entry]="cartEntry"
+    (addToCart)="addOneItemToCart($event)"
+    (removeFromCart)="removeOneItemFromCart($event)"
+    (delete)="delteFromCart($event)">
+</app-shopping-cart-entry>

@@ -11,13 +11,13 @@
             <span>{{ entry.price }}$</span>
         </div>
         <div class="card-inner-amount__wrapper card-inner__column">
-            <app-counter [value]="entry.amount"></app-counter>
+            <app-counter [value]="entry.amount" (change)="changeAmount($event)"></app-counter>
         </div>
         <div class="card-inner-totalprice__wrapper card-inner__column">
             <span>{{ entry.price * entry.amount }}$</span>
         </div>
         <div class="card-inner-delete__wrapper card-inner__column">
-            <mat-icon mat-ripple>delete_forever</mat-icon>
+            <mat-icon (click)="deleteAll()" mat-ripple>delete_forever</mat-icon>
         </div>    
     </div>
 </mat-card>

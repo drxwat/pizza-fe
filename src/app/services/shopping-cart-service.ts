@@ -30,6 +30,14 @@ export class ShoppingCartService {
         this.addToCart(id, -amount);
     }
 
+    public deleteFromCart(id: number) {
+        const currentVal = this._cart.get(id);
+        if (!currentVal) {
+            return;
+        }
+        this.addToCart(id, -currentVal);
+    }
+
     public clearCart() {
         [...this._cart.keys()].forEach((k) => this._cart.delete(k));
         this.emitChange();

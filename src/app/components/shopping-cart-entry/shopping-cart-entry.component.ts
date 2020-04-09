@@ -16,4 +16,16 @@ export class ShoppingCartEntryComponent {
   @Output() delete: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
+
+  changeAmount(change: -1 | 1) {
+    if (change === 1) {
+      this.addToCart.emit(this.entry.id);
+    } else if (change === -1) {
+      this.removeFromCart.emit(this.entry.id);
+    }
+  }
+
+  deleteAll() {
+    this.delete.emit(this.entry.id);
+  }
 }
