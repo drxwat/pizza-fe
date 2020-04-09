@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
+## Deployment (manual)
+
+1. Build application with `ng build --prod`.
+
+2. Run `npm run start` to start the server with proxy to Heroku hosted demo backend.
+
+Note: `server.js` script written particularly for Heroku hosting and runs automatically by Heroku.
+
+# General Info
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

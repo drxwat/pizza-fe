@@ -49,8 +49,11 @@ export class ShoppingCartComponent implements OnInit {
       }),
     );
 
-    this.isCartEmpty$ = this._shoppingCartService.change$.pipe(
-      map((cart) => cart.size === 0)
+    this.isCartEmpty$ = concat(
+      of(this._shoppingCartService.cart.size === 0),
+      this._shoppingCartService.change$.pipe(
+        map((cart) => cart.size === 0)
+      )
     );
 
     this.isLoading$ = concat(
