@@ -1,3 +1,5 @@
+<app-spinner class="spinner" *ngIf="isLoading$ | async"></app-spinner>
+
 <ng-container *ngIf="isCartEmpty$ | async; then emptyBlock else cartBlock"></ng-container>
 
 <ng-template #cartBlock>
@@ -14,7 +16,7 @@
     <ng-container *ngIf="isOrderApplied; then successMsg else emptyMsg"></ng-container>
 
     <ng-template #emptyMsg>
-        <div class="empty-msg">Shpooing cart is empty</div>
+        <div class="empty-msg">Shopping cart is empty</div>
     </ng-template>
     <ng-template #successMsg>
         <div class="success-msg">Thank you for your order. It will be delivered soon.</div>

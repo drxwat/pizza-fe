@@ -1,3 +1,5 @@
+<app-spinner class="spinner" *ngIf="isLoading$ | async"></app-spinner>
+
 <app-pizza-card
     *ngFor="let pizza of pizzas$ | async"
     [pizza]="pizza" 

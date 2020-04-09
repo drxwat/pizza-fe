@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { PizzaService } from 'src/app/services/pizza-service';
 import { ShoppingCartService } from 'src/app/services/shopping-cart-service';
 import { Pizza } from 'src/app/models/pizza';
+import { concat, of } from 'rxjs';
+import { map, take, share } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pizzas-list',
@@ -11,7 +13,14 @@ import { Pizza } from 'src/app/models/pizza';
 })
 export class PizzasListComponent {
 
-  public pizzas$ = this._pizzaService.getPIzzas();
+  public pizzas$ = this._pizzaService.getPIzzas().pipe(share());
+
+  public isLoading$ = concat(
+    of(true),
+    this.pizzas$.pipe(
+      map(() => false)
+    )
+  );
 
   constructor(
     private _pizzaService: PizzaService,
