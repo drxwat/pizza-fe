@@ -5,13 +5,22 @@
 
   .card-inner {
     &-wrapper {
-      display: flex;
-      height: $guttler * 4;
+      display: grid;
+      grid-template-columns: 1fr 1fr 5fr 1fr 1fr 1fr;
+      grid-template-areas: "pic tit prc amt ttl del";
       align-items: center;
+      justify-items: baseline;
+
+      @media (max-width: $mobile_screen_width) {
+        grid-template-areas: 
+          "pic tit prc"
+          "amt ttl del";
+      }
     }
 
     &-picture {
       &__wrapper {
+        grid-area: pic;
         height: $guttler * 4;
       }
 
@@ -21,7 +30,8 @@
     }
 
     &-title {
-      &__wrapper { 
+      &__wrapper {
+        grid-area: tit;
         display: flex;
         flex-direction: column;
         padding: 0px $guttler;
@@ -33,25 +43,37 @@
       }
     }
 
-    &-devider {
-      flex-grow: 1;
-    }
-
     &-price {
       &__wrapper {
+        grid-area: prc;
         font-size: $font_big;
         align-self: baseline;
+        justify-self: flex-start;
+      }
+    }
+
+    &-amount {
+      &__wrapper {
+        grid-area: amt;
+       }
+    }
+
+    &-totalprice {
+      &__wrapper {
+        grid-area: ttl;
+        font-size: $font_big;
       }
     }
 
     &-delete {
       &__wrapper {
+        grid-area: del;
         cursor: pointer;
       }
     }
 
     &__column {
-      padding: 0px $guttler/2;
+      padding: $guttler/2;
     }
   }
 }

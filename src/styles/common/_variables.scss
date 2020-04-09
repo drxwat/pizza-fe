@@ -2,4 +2,5 @@
 $guttler: 16px;
 $font_big: 20px;
 $max_screen_width: 1200px;
-$screen_sizes: 320px, 600px, 900px, $max_screen_width;
+$mobile_screen_width: 600px;
+$screen_sizes: 320px, $mobile_screen_width, 900px, $max_screen_width;

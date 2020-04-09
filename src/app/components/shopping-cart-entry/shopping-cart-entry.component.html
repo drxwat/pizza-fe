@@ -8,14 +8,16 @@
             <small>{{ entry.subtitle }}</small>
         </div>
         <div class="card-inner-price__wrapper card-inner__column">
-            <span>{{ entry.price }} $</span>
+            <span>{{ entry.price }}$</span>
         </div>
-        <div class="card-inner-devider"></div>
-        <div class="card-inner__column">
+        <div class="card-inner-amount__wrapper card-inner__column">
             <app-counter [value]="entry.amount"></app-counter>
         </div>
+        <div class="card-inner-totalprice__wrapper card-inner__column">
+            <span>{{ entry.price * entry.amount }}$</span>
+        </div>
         <div class="card-inner-delete__wrapper card-inner__column">
-            <mat-icon mat-ripple color="warn">close</mat-icon>
+            <mat-icon mat-ripple>delete_forever</mat-icon>
         </div>    
     </div>
 </mat-card>
